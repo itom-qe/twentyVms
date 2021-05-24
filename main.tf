@@ -4,7 +4,6 @@ resource "random_id" "server" {
 
 data "azurerm_resource_group" "rg" {
 	name     = "${var.resource_group}-${random_id.server.hex}"
-	location = "${var.region}"
 }
 
 resource "azurerm_storage_account" "stor" {
